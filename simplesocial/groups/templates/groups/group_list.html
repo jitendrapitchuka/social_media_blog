@@ -24,18 +24,18 @@
     <a href="{%url 'groups:create' %}" class="btn btn-md btn-fill btn-warning">
         <span class="glyphicon glyphicon-plus-sign">create new group!</span>
     </a>
-
+{%endif%}
 </div>
 {%endblock%}
 
 
 
 
-{%block group_content}
+{%block group_content%}
 <div class="col-md-8">
     <div class="list-group">
         {%for group in object_list %}
-        <a class="list-group-item" href="{%url 'groups:single' slug=group.single%}">
+        <a class="list-group-item" href="{%url 'groups:single' slug=group.slug%}">
 
             <h3 class="title list-group-item-heading">
                 {{group.name}}
@@ -65,7 +65,4 @@
     </div>
 
 </div>
-
-
-
-{%endblock%}
+{% endblock %}

@@ -31,14 +31,14 @@
 
 <ul class="nav navbar-nav navbar-right">
     {%if user.is_authenticated%}
- <li><a href="#">post</a></li>
- <li><a href="#">groups</a></li>
- <li><a href="#">create group</a></li>
+ <li><a href="{%url 'posts:create'%}">post</a></li>
+ <li><a href="{%url 'groups:all'%}">groups</a></li>
+ <li><a href="{%url 'groups:create'%}">create group</a></li>
  <li><a href="{%url 'accounts:logout'%}">logout</a></li>
 
  {%else%}
 
- <li><a href="#">groups</a></li>
+ <li><a href="{%url 'groups:all'%}">groups</a></li>
  <li><a href="{%url 'accounts:login'%}">login</a></li>
  <li><a href="{%url 'accounts:signup'%}">signup</a></li>
  {%endif%}
